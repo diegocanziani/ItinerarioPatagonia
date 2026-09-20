@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#0d1114;color:#ece7dc;font-family:'IBM Plex Sans',Helvetica,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+a{color:#9fc6dc}a:hover{color:#cfe3ee}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="font-size:16px;line-height:1.55">
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:5;padding:10px 16px;background:linear-gradient(rgba(13,17,20,.85),rgba(13,17,20,0));display:flex;gap:6px;overflow-x:auto;pointer-events:none">
+  <button onClick="{{ goB1 }}" style="pointer-events:auto;flex:0 0 auto;border:1px solid rgba(236,231,220,.35);background:rgba(13,17,20,.55);backdrop-filter:blur(8px);border-radius:999px;padding:7px 12px;font:500 13px 'IBM Plex Sans',sans-serif;color:#ece7dc;cursor:pointer">El Bolsón</button>
+  <button onClick="{{ goB2 }}" style="pointer-events:auto;flex:0 0 auto;border:1px solid rgba(236,231,220,.35);background:rgba(13,17,20,.55);backdrop-filter:blur(8px);border-radius:999px;padding:7px 12px;font:500 13px 'IBM Plex Sans',sans-serif;color:#ece7dc;cursor:pointer">Villa La Angostura</button>
+  <button onClick="{{ goB3 }}" style="pointer-events:auto;flex:0 0 auto;border:1px solid rgba(236,231,220,.35);background:rgba(13,17,20,.55);backdrop-filter:blur(8px);border-radius:999px;padding:7px 12px;font:500 13px 'IBM Plex Sans',sans-serif;color:#ece7dc;cursor:pointer">San Martín</button>
+</nav>
+
+<header data-screen-label="Portada" style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end">
+  <div style="position:absolute;inset:0"><image-slot id="hero" src="https://images.unsplash.com/photo-1626920648570-2f315215fabf?auto=format&amp;fit=crop&amp;w=2400&amp;q=80" credit="Daniel Vargas · Unsplash" credit-href="https://unsplash.com/photos/tK2EPBzvgTg" shape="rect" placeholder="Foto o video: Lago Espejo desde el mirador"></image-slot></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,17,20,.2) 0%,rgba(13,17,20,0) 35%,rgba(13,17,20,.85) 75%,#0d1114 100%);pointer-events:none"></div>
+  <div style="position:relative;padding:0 24px 40px;max-width:720px;margin:0 auto;width:100%;pointer-events:none">
+    <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#b9b2a4">16 al 26 de diciembre · 6 personas · Chevrolet Spin</div>
+    <h1 style="font:400 clamp(64px,18vw,120px)/.95 'Instrument Serif',serif;margin:14px 0 20px;letter-spacing:-.02em">De sur<br>a norte</h1>
+    <p style="margin:0;font-size:17px;color:#d5cfc2;max-width:560px">Once días siguiendo la línea de los lagos: El Bolsón, Villa La Angostura y San Martín de los Andes. Tres bases, la Ruta de los Siete Lagos recorrida en los dos sentidos, y Bariloche cruzado una sola vez sin bajarse del auto.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:28px;border-top:1px solid rgba(236,231,220,.3);padding-top:14px">
+      <div><div style="font:400 32px/1 'Instrument Serif',serif">3</div><div style="font-size:12px;color:#b9b2a4;margin-top:4px">bases</div></div>
+      <div><div style="font:400 32px/1 'Instrument Serif',serif">10</div><div style="font-size:12px;color:#b9b2a4;margin-top:4px">noches</div></div>
+      <div><div style="font:400 32px/1 'Instrument Serif',serif">655</div><div style="font-size:12px;color:#b9b2a4;margin-top:4px">km de traslados</div></div>
+      <div><div style="font:400 32px/1 'Instrument Serif',serif">7+5</div><div style="font-size:12px;color:#b9b2a4;margin-top:4px">lagos</div></div>
+    </div>
+  </div>
+</header>
+
+<section style="max-width:720px;margin:0 auto;padding:40px 24px 56px">
+  <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b9b2a4;margin-bottom:18px">Recorrido</div>
+  <div style="display:grid;grid-template-columns:18px minmax(0,1fr);column-gap:16px">
+    <div style="display:flex;flex-direction:column;align-items:center"><div style="width:10px;height:10px;border-radius:50%;border:2px solid #ece7dc"></div><div style="flex:1;width:1px;background:rgba(236,231,220,.4);margin:2px 0"></div></div>
+    <div style="padding-bottom:20px"><div style="font-size:15px;font-weight:600">Aeropuerto de Bariloche</div><div style="font-size:13px;color:#b9b2a4">mié 16 · llegan 15:40</div><div style="font-size:12px;color:#9fc6dc;margin-top:6px">↓ 145 km · 2 h 15</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center"><div style="width:14px;height:14px;border-radius:50%;background:#9fc6dc"></div><div style="flex:1;width:1px;background:rgba(236,231,220,.4);margin:2px 0"></div></div>
+    <div style="padding-bottom:20px"><div style="font:400 24px/1.1 'Instrument Serif',serif">El Bolsón</div><div style="font-size:13px;color:#b9b2a4">2 noches · 16 y 17</div><div style="font-size:12px;color:#9fc6dc;margin-top:6px">↓ 210 km · 3 h 30 · cruza Bariloche</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center"><div style="width:14px;height:14px;border-radius:50%;background:#9fc6dc"></div><div style="flex:1;width:1px;background:rgba(236,231,220,.4);margin:2px 0"></div></div>
+    <div style="padding-bottom:20px"><div style="font:400 24px/1.1 'Instrument Serif',serif">Villa La Angostura</div><div style="font-size:13px;color:#b9b2a4">4 noches · 18 al 21</div><div style="font-size:12px;color:#9fc6dc;margin-top:6px">↓ 110 km · Siete Lagos, día entero</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center"><div style="width:14px;height:14px;border-radius:50%;background:#9fc6dc"></div><div style="flex:1;width:1px;background:rgba(236,231,220,.4);margin:2px 0"></div></div>
+    <div style="padding-bottom:20px"><div style="font:400 24px/1.1 'Instrument Serif',serif">San Martín de los Andes</div><div style="font-size:13px;color:#b9b2a4">4 noches · 22 al 25</div><div style="font-size:12px;color:#9fc6dc;margin-top:6px">↓ 190 km · 3 h · por Junín</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center"><div style="width:10px;height:10px;border-radius:50%;border:2px solid #ece7dc"></div></div>
+    <div><div style="font-size:15px;font-weight:600">Aeropuerto de Bariloche</div><div style="font-size:13px;color:#b9b2a4">sáb 26 · vuelo 14:20</div></div>
+  </div>
+</section>
+
+<section id="base1" data-screen-label="Base 1">
+  <div style="position:relative;height:72svh;min-height:420px;display:flex;align-items:flex-end">
+    <div style="position:absolute;inset:0"><image-slot id="b1" src="https://i.pinimg.com/originals/61/8b/35/618b3543efed681a90f84baaadace97b.jpg" credit="vía Pinterest" credit-href="https://www.pinterest.com/" shape="rect" placeholder="Foto o video: Lago Puelo, el valle de El Bolsón"></image-slot></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,17,20,0) 40%,rgba(13,17,20,.9) 100%);pointer-events:none"></div>
+    <div style="position:relative;width:100%;max-width:720px;margin:0 auto;padding:0 24px 28px;pointer-events:none">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b9b2a4">Base 1 · 16 y 17 de diciembre · 2 noches</div>
+      <h2 style="font:400 clamp(48px,12vw,80px)/1 'Instrument Serif',serif;margin:8px 0 0;letter-spacing:-.01em">El Bolsón</h2>
+    </div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:16px 24px 48px">
+    <p style="margin:0 0 32px;font-size:18px;color:#d5cfc2">Valle bajo, calor de verdad y el agua más templada del viaje. Es la punta sur y la parte más rústica.</p>
+    <article style="margin-bottom:40px">
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-weight:600;font-size:14px">Miércoles 16</span></div>
+      <h3 style="font:400 28px/1.15 'Instrument Serif',serif;margin:4px 0 12px">Llegada y bajada al sur</h3>
+      <p style="margin:0 0 12px;color:#d5cfc2">El avión toca a las 15:40. Entre bajar, esperar el equipaje y el papeleo del alquiler con seis personas, calculen salir del aeropuerto cerca de las 16:45. Son 145 km de camino de montaña hasta El Bolsón: llegan alrededor de las 19:00, con luz de sobra para hacer la compra grande e instalarse.</p>
+      <div style="border-left:0;background:rgba(236,231,220,.07);border-radius:8px;padding:10px 14px;font-size:14px;color:#e6d9bd">En diciembre hay luz hasta las 21:30. Las tardes rinden mucho más de lo que parece.</div>
+    </article>
+    <article style="margin-bottom:8px">
+      <div style="aspect-ratio:16/10;margin-bottom:8px"><image-slot id="d17w" src="https://mylittlebuenosaires.com/wp-content/uploads/2025/01/Lago-Puelo-Parque-Nacional-scaled.png" credit="mylittlebuenosaires.com" credit-href="https://mylittlebuenosaires.com/" shape="rounded" radius="10" placeholder="Foto: Lago Puelo turquesa desde arriba"></image-slot></div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:16px">
+        <div style="aspect-ratio:3/4"><image-slot id="d17a" src="https://barilochetours.com.ar/wp-content/uploads/2024/08/El-Bolson-y-Lago-Puelo-96-2048x1365.jpg" credit="barilochetours.com.ar" credit-href="https://barilochetours.com.ar/" shape="rounded" radius="10" placeholder="Foto: Lago Puelo, playa"></image-slot></div>
+        <div style="aspect-ratio:3/4"><image-slot id="d17b" src="https://cheargentinatravel.com/wp-content/uploads/2023/01/El-Bolson-Patagonia-Argentina-66-2048x1154.jpg" credit="cheargentinatravel.com" credit-href="https://cheargentinatravel.com/" shape="rounded" radius="10" placeholder="Foto: Bosque Tallado"></image-slot></div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-weight:600;font-size:14px">Jueves 17</span><span style="font-size:12px;color:#9fc6dc;border:1px solid rgba(159,198,220,.6);border-radius:999px;padding:1px 8px">día de agua</span></div>
+      <h3 style="font:400 28px/1.15 'Instrument Serif',serif;margin:4px 0 16px">Lago Puelo, Río Azul y el Bosque Tallado</h3>
+      <div style="display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:12px">
+        <div style="font:400 22px/1.2 'Instrument Serif',serif;color:#9fc6dc">09:00</div>
+        <div style="padding-bottom:16px"><div style="font-weight:600;color:#ece7dc">Lago Puelo</div><div style="color:#d5cfc2">Parque Nacional, 18 km al sur y ya en Chubut. Playa de canto rodado, kayaks y el agua más templada del viaje. Toda la mañana.</div></div>
+        <div style="font:400 22px/1.2 'Instrument Serif',serif;color:#9fc6dc">13:30</div>
+        <div style="padding-bottom:16px"><div style="font-weight:600;color:#ece7dc">Vuelta al pueblo y almuerzo</div><div style="color:#d5cfc2">Los jueves arma la feria artesanal de Plaza Pagano: se puede comer ahí mismo.</div></div>
+        <div style="font:400 22px/1.2 'Instrument Serif',serif;color:#9fc6dc">15:30</div>
+        <div style="padding-bottom:16px"><div style="font-weight:600;color:#ece7dc">Río Azul</div><div style="color:#d5cfc2">Zona de balnearios camino a Wharton. Agua de deshielo, turquesa fuerte, helada.</div></div>
+      </div>
+      <div style="aspect-ratio:16/10;margin:0 0 16px"><image-slot id="d17r" src="https://www.montanistablog.com/bols.jpg" credit="montanistablog.com" credit-href="https://www.montanistablog.com/" shape="rounded" radius="10" placeholder="Foto: Río Azul, agua turquesa de deshielo"></image-slot></div>
+      <div style="display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:12px">
+        <div style="font:400 22px/1.2 'Instrument Serif',serif;color:#9fc6dc">17:30</div>
+        <div style="padding-bottom:16px"><div style="font-weight:600;color:#ece7dc">Bosque Tallado</div><div style="color:#d5cfc2">Ripio hasta el refugio del Piltriquitrón y cuarenta minutos de caminata en subida hasta el bosque de troncos quemados convertidos en esculturas. Con la luz de la tarde y todo el valle abajo.</div></div>
+      </div>
+      <div style="aspect-ratio:16/10;margin:0 0 16px"><image-slot id="d17s" src="https://www.rionegro.com.ar/wp-content/uploads/2025/04/pil-6.jpg" credit="Diario Río Negro" credit-href="https://www.rionegro.com.ar/" shape="rounded" radius="10" placeholder="Foto: atardecer en la cumbre del Piltriquitrón"></image-slot></div>
+      <div style="background:rgba(236,231,220,.07);border-radius:8px;padding:10px 14px;font-size:14px;color:#e6d9bd">El Cajón del Azul queda afuera a propósito: son ocho horas de caminata por dentro del bosque. Los balnearios de Wharton dan el mismo color de agua sin caminar.</div>
+    </article>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:0 24px 56px">
+    <div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px dashed rgba(236,231,220,.35);border-radius:10px;font-size:14px;color:#d5cfc2">
+      <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b9b2a4;flex:0 0 auto;padding-top:2px">Traslado</span>
+      <span><strong style="color:#ece7dc">Viernes 18</strong> · El Bolsón a Villa La Angostura. 210 km, 3 h 30, cruzando Bariloche. Salir 10:00, llegar 13:30.</span>
+    </div>
+  </div>
+</section>
+
+<section id="base2" data-screen-label="Base 2">
+  <div style="position:relative;height:72svh;min-height:420px;display:flex;align-items:flex-end">
+    <div style="position:absolute;inset:0"><image-slot id="b2" src="https://images.unsplash.com/photo-1612611155301-ac3e1734c91c?auto=format&amp;fit=crop&amp;w=2400&amp;q=80" credit="Fermin Rodriguez Penelas · Unsplash" credit-href="https://unsplash.com/photos/WKlkL2EiBE4" shape="rect" placeholder="Foto o video: Nahuel Huapi desde Bahía Mansa"></image-slot></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,17,20,0) 40%,rgba(13,17,20,.9) 100%);pointer-events:none"></div>
+    <div style="position:relative;width:100%;max-width:720px;margin:0 auto;padding:0 24px 28px;pointer-events:none">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b9b2a4">Base 2 · 18 al 21 de diciembre · 4 noches</div>
+      <h2 style="font:400 clamp(44px,11vw,76px)/1 'Instrument Serif',serif;margin:8px 0 0;letter-spacing:-.01em">Villa La Angostura</h2>
+    </div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:16px 24px 48px">
+    <p style="margin:0 0 32px;font-size:18px;color:#d5cfc2">La base más cómoda del viaje y la punta sur de los Siete Lagos. Desde acá sale todo sin tener que mudarse.</p>
+    <article style="margin-bottom:40px">
+      <div style="aspect-ratio:16/10;margin-bottom:16px"><image-slot id="d18" src="https://images.unsplash.com/photo-1604019550725-929e136907cf?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" credit="Hector Ramon Perez · Unsplash" credit-href="https://unsplash.com/photos/F-RwGexZ9Jk" shape="rounded" radius="10" placeholder="Foto: Bahía Mansa, playa y agua transparente"></image-slot></div>
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-weight:600;font-size:14px">Viernes 18</span><span style="font-size:12px;color:#9fc6dc;border:1px solid rgba(159,198,220,.6);border-radius:999px;padding:1px 8px">agua</span></div>
+      <h3 style="font:400 28px/1.15 'Instrument Serif',serif;margin:4px 0 12px">Llegada y las bahías</h3>
+      <p style="margin:0;color:#d5cfc2">Llegan a media tarde. Bahía Mansa y Bahía Brava están a minutos del centro y son la mejor forma de empezar: dos bahías del Nahuel Huapi con playa y muelle. Si queda luz, la Cascada Inacayal está a diez minutos del pueblo.</p>
+    </article>
+    <article style="margin-bottom:40px">
+      <div style="aspect-ratio:16/10;margin-bottom:16px"><image-slot id="d19" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bosque_de_arrayanes_%2829463403005%29.jpg?width=1800" credit="Nicolás · Wikimedia Commons · CC BY-SA 2.0" credit-href="https://commons.wikimedia.org/wiki/File:Bosque_de_arrayanes_%2829463403005%29.jpg" shape="rounded" radius="10" placeholder="Foto: Bosque de Arrayanes, troncos canela"></image-slot></div>
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-weight:600;font-size:14px">Sábado 19</span><span style="font-size:12px;color:#9fc6dc;border:1px solid rgba(159,198,220,.6);border-radius:999px;padding:1px 8px">agua</span></div>
+      <h3 style="font:400 28px/1.15 'Instrument Serif',serif;margin:4px 0 12px">Bosque de Arrayanes y Lago Correntoso</h3>
+      <p style="margin:0 0 12px;color:#d5cfc2">Catamarán desde el puerto hasta la península de Quetrihué, ida y vuelta. La caminata larga de 12 km existe, pero con seis personas y el gusto por el agua conviene la versión corta y guardar el día.</p>
+      <div style="aspect-ratio:16/10;margin:16px 0"><image-slot id="d19b" src="https://images.unsplash.com/photo-1698006346429-025d7a218122?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" credit="Luís Lança · Unsplash" credit-href="https://unsplash.com/photos/xQDZ6CCPDjM" shape="rounded" radius="10" placeholder="Foto: río Correntoso desde el aire"></image-slot></div>
+      <p style="margin:0;color:#d5cfc2">A la tarde, Lago Correntoso, unido al Nahuel Huapi por un río de apenas doscientos metros, o las playas de Bahía Manzano.</p>
+    </article>
+    <article style="margin-bottom:40px">
+      <div style="aspect-ratio:16/10;margin-bottom:16px"><image-slot id="d20" src="https://images.unsplash.com/photo-1615414271806-e042237ffdf2?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" credit="Carlos Galarza · Unsplash" credit-href="https://unsplash.com/photos/KjmIApvxtU8" shape="rounded" radius="10" placeholder="Foto o video: Mirador del Lago Espejo"></image-slot></div>
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-weight:600;font-size:14px">Domingo 20</span><span style="font-size:12px;color:#9fc6dc;border:1px solid rgba(159,198,220,.6);border-radius:999px;padding:1px 8px">agua</span></div>
+      <h3 style="font:400 28px/1.15 'Instrument Serif',serif;margin:4px 0 12px">Tramo sur de los Siete Lagos</h3>
+      <p style="margin:0 0 12px;color:#d5cfc2">Salen por la Ruta 40 hacia el norte y vuelven a dormir acá. En cuarenta kilómetros pasan Espejo, Espejo Chico, Correntoso, Escondido, Villarino y Falkner. El mirador del Lago Espejo, sobre el acantilado, es la postal más fuerte de toda la ruta.</p>
+      <div style="aspect-ratio:4/5;margin:16px 0"><image-slot id="d20b" src="https://images.unsplash.com/photo-1579347380110-d27a8be59b32?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" credit="Cristian Asame · Unsplash" credit-href="https://unsplash.com/photos/l0H8Yw0ibMs" shape="rounded" radius="10" placeholder="Foto: Lago Falkner"></image-slot></div>
+      <p style="margin:0 0 12px;color:#d5cfc2">Villarino y Falkner tienen playa de verdad: ahí se planta la tarde entera. Malla, vianda, reposeras.</p>
+      <div style="background:rgba(236,231,220,.07);border-radius:8px;padding:10px 14px;font-size:14px;color:#e6d9bd">Carguen nafta en Villa La Angostura antes de salir. En los 110 km de los Siete Lagos no hay una sola estación de servicio.</div>
+    </article>
+    <article style="margin-bottom:8px">
+      <div style="aspect-ratio:16/10;margin-bottom:16px"><image-slot id="d21" src="https://images.unsplash.com/photo-1645230696020-9d886db6db41?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" credit="Hector Ramon Perez · Unsplash" credit-href="https://unsplash.com/photos/xbNocrAzrxw" shape="rounded" radius="10" placeholder="Foto: Lago Traful, paredes de roca"></image-slot></div>
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-weight:600;font-size:14px">Lunes 21</span><span style="font-size:12px;color:#9fc6dc;border:1px solid rgba(159,198,220,.6);border-radius:999px;padding:1px 8px">agua</span></div>
+      <h3 style="font:400 28px/1.15 'Instrument Serif',serif;margin:4px 0 12px">Villa Traful</h3>
+      <p style="margin:0 0 12px;color:#d5cfc2">Sesenta kilómetros: Ruta 40 hacia el norte y a los 35 km doblan por la Ruta 65 hacia el este. Traful es un lago encajonado entre paredes de roca, verde oscuro, distinto a todos los demás. Kayak, el Mirador del Traful, la Cascada del Arroyo Coa Co y la Piedra del Viento.</p>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:16px 0">
+        <div style="aspect-ratio:3/4"><image-slot id="d21a" src="https://images.unsplash.com/photo-1579033466174-511507f408e3?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" credit="Hector Ramon Perez · Unsplash" credit-href="https://unsplash.com/photos/vG0OBqJcexs" shape="rounded" radius="10" placeholder="Foto: mirador del Traful"></image-slot></div>
+        <div style="aspect-ratio:3/4"><image-slot id="d21b" src="https://images.unsplash.com/photo-1647142137353-48abfbce9496?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" credit="José Ignacio Pompé · Unsplash" credit-href="https://unsplash.com/photos/g3qSP3RuFVc" shape="rounded" radius="10" placeholder="Foto: atardecer sobre las paredes del Traful"></image-slot></div>
+      </div>
+      <div style="background:rgba(236,231,220,.07);border-radius:8px;padding:10px 14px;font-size:14px;color:#e6d9bd">La Ruta 65 está en obra de pavimentación: hay asfalto nuevo en tramos y ripio bastante castigado en otros. Despacio, y con la rueda de auxilio revisada. Es el agua más fría del viaje.</div>
+    </article>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:0 24px 56px">
+    <div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px dashed rgba(236,231,220,.35);border-radius:10px;font-size:14px;color:#d5cfc2">
+      <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b9b2a4;flex:0 0 auto;padding-top:2px">Traslado</span>
+      <span><strong style="color:#ece7dc">Martes 22</strong> · Villa La Angostura a San Martín de los Andes. 110 km por los Siete Lagos. Día entero, no traslado: salir temprano.</span>
+    </div>
+  </div>
+</section>
+
+<section id="base3" data-screen-label="Base 3">
+  <div style="position:relative;height:72svh;min-height:420px;display:flex;align-items:flex-end">
+    <div style="position:absolute;inset:0"><image-slot id="b3" src="https://images.unsplash.com/photo-1551494394-bef2583a09ce?auto=format&amp;fit=crop&amp;w=2400&amp;q=80" credit="Romina Farías · Unsplash" credit-href="https://unsplash.com/photos/Vbq6Vp0klv4" shape="rect" placeholder="Foto o video: Lago Lácar desde el Mirador Bandurrias"></image-slot></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,17,20,0) 40%,rgba(13,17,20,.9) 100%);pointer-events:none"></div>
+    <div style="position:relative;width:100%;max-width:720px;margin:0 auto;padding:0 24px 28px;pointer-events:none">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b9b2a4">Base 3 · 22 al 25 de diciembre · 4 noches</div>
+      <h2 style="font:400 clamp(40px,10vw,72px)/1 'Instrument Serif',serif;margin:8px 0 0;letter-spacing:-.01em">San Martín de los Andes</h2>
+    </div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:16px 24px 48px">
+    <p style="margin:0 0 32px;font-size:18px;color:#d5cfc2">La punta norte, sobre el Lago Lácar. El único de los tres pueblos con todo abierto en Nochebuena.</p>
+    <article style="margin-bottom:40px">
+      <div style="aspect-ratio:16/10;margin-bottom:16px"><image-slot id="d22" src="https://images.unsplash.com/photo-1732578261394-6f433ca70136?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" credit="Daniel Walter · Unsplash" credit-href="https://unsplash.com/photos/GOJZH5_xGaI" shape="rounded" radius="10" placeholder="Foto: Mirador del Pil Pil, el Lácar entero"></image-slot></div>
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-weight:600;font-size:14px">Martes 22</span><span style="font-size:12px;color:#9fc6dc;border:1px solid rgba(159,198,220,.6);border-radius:999px;padding:1px 8px">agua</span></div>
+      <h3 style="font:400 28px/1.15 'Instrument Serif',serif;margin:4px 0 12px">Tramo norte de los Siete Lagos</h3>
+      <p style="margin:0;color:#d5cfc2">La mudanza es el paseo. Paran en lo que les faltaba: Lago Machónico, la cascada Vuliñanco y el Mirador del Pil Pil llegando, desde donde ya se ve el Lácar entero. Con esto quedan hechos los siete.</p>
+    </article>
+    <article style="margin-bottom:40px">
+      <div style="aspect-ratio:16/10;margin-bottom:16px"><image-slot id="d23" src="https://commons.wikimedia.org/wiki/Special:FilePath/Lago_Lolog_-_panoramio.jpg?width=1800" credit="Estany3 · Wikimedia Commons · CC BY-SA 3.0" credit-href="https://commons.wikimedia.org/wiki/File:Lago_Lolog_-_panoramio.jpg" shape="rounded" radius="10" placeholder="Foto: Lago Lolog"></image-slot></div>
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-weight:600;font-size:14px">Miércoles 23</span><span style="font-size:12px;color:#9fc6dc;border:1px solid rgba(159,198,220,.6);border-radius:999px;padding:1px 8px">agua</span></div>
+      <h3 style="font:400 28px/1.15 'Instrument Serif',serif;margin:4px 0 12px">Lago Lolog</h3>
+      <p style="margin:0;color:#d5cfc2">Quince kilómetros al norte del pueblo, playa amplia, mucha menos gente que el Lácar y agua de las más templadas del norte. Día entero sin agenda.</p>
+    </article>
+    <article style="margin-bottom:40px">
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:16px">
+        <div style="aspect-ratio:3/4"><image-slot id="d24a" src="https://images.unsplash.com/photo-1577931751802-068d861ba420?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" credit="Thayran Melo · Unsplash" credit-href="https://unsplash.com/photos/zwTuw-5djgw" shape="rounded" radius="10" placeholder="Foto: Quila Quina desde la lancha"></image-slot></div>
+        <div style="aspect-ratio:3/4"><image-slot id="d24b" src="https://images.unsplash.com/photo-1627859767844-87729a39ce66?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" credit="Gonzalo Kenny · Unsplash" credit-href="https://unsplash.com/photos/ntAYMmfAscc" shape="rounded" radius="10" placeholder="Foto: atardecer, Mirador Bandurrias"></image-slot></div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-weight:600;font-size:14px">Jueves 24</span><span style="font-size:12px;color:#9fc6dc;border:1px solid rgba(159,198,220,.6);border-radius:999px;padding:1px 8px">agua</span></div>
+      <h3 style="font:400 28px/1.15 'Instrument Serif',serif;margin:4px 0 12px">Quila Quina y Nochebuena</h3>
+      <p style="margin:0 0 12px;color:#d5cfc2">Lancha desde el muelle de San Martín hasta Quila Quina, una playa sobre el Lácar a la que se llega mucho mejor por agua que por tierra. Al atardecer, el Mirador Bandurrias.</p>
+      <div style="background:rgba(236,231,220,.07);border-radius:8px;padding:10px 14px;font-size:14px;color:#e6d9bd">Reserven restaurante para el 24 con anticipación, o resuelvan la cena en la casa. Acá sí hay opciones abiertas, pero se llenan.</div>
+    </article>
+    <article style="margin-bottom:40px">
+      <div style="aspect-ratio:16/10;margin-bottom:16px"><image-slot id="d25" src="https://commons.wikimedia.org/wiki/Special:FilePath/CASCADA_CHACHIN.jpg?width=1800" credit="Mayra García · Wikimedia Commons · CC BY-SA 4.0" credit-href="https://commons.wikimedia.org/wiki/File:CASCADA_CHACHIN.jpg" shape="rounded" radius="10" placeholder="Foto o video: Cascada Chachín, bosque valdiviano"></image-slot></div>
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-weight:600;font-size:14px">Viernes 25</span></div>
+      <h3 style="font:400 28px/1.15 'Instrument Serif',serif;margin:4px 0 12px">Hua Hum y Cascada Chachín</h3>
+      <p style="margin:0;color:#d5cfc2">Navidad al aire libre, que el 25 es lo único que funciona. Camino al paso a Chile, bordeando el Lácar, hasta un bosque valdiviano mucho más húmedo y cerrado que todo el resto del viaje. Hay ripio. Si prefieren no moverse, el Lácar desde el pueblo también es un buen 25.</p>
+    </article>
+    <article style="margin-bottom:8px">
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-weight:600;font-size:14px">Sábado 26</span></div>
+      <h3 style="font:400 28px/1.15 'Instrument Serif',serif;margin:4px 0 12px">Vuelta al aeropuerto</h3>
+      <p style="margin:0;color:#d5cfc2">Salir 08:30. Son 190 km de asfalto por Junín de los Andes y la Ruta 237, unas tres horas contando la devolución del auto. Llegan cerca de las 11:30 para el vuelo de las 14:20, con margen cómodo.</p>
+    </article>
+  </div>
+</section>
+
+<sc-if value="{{ mostrarTabla }}" hint-placeholder-val="{{ true }}">
+<section style="max-width:720px;margin:0 auto;padding:0 24px 56px">
+  <div style="border-top:1px solid rgba(236,231,220,.3);padding-top:16px;margin-bottom:12px"><h2 style="font:400 36px/1.1 'Instrument Serif',serif;margin:0">Traslados</h2></div>
+  <div style="font-size:14px;color:#d5cfc2">
+    <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:8px;padding:6px 0;border-bottom:1px solid rgba(236,231,220,.5);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#b9b2a4"><span>Tramo</span><span>Distancia · tiempo</span><span>Cuándo</span></div>
+    <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:8px;padding:10px 0;border-bottom:1px solid rgba(236,231,220,.15)"><span>Aeropuerto a El Bolsón</span><span>145 km<br>2 h 15</span><span>mié 16, 16:45</span></div>
+    <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:8px;padding:10px 0;border-bottom:1px solid rgba(236,231,220,.15)"><span>El Bolsón a Villa La Angostura</span><span>210 km<br>3 h 30</span><span>vie 18, 10:00</span></div>
+    <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:8px;padding:10px 0;border-bottom:1px solid rgba(236,231,220,.15)"><span>Siete Lagos, tramo sur, ida y vuelta</span><span>80 km<br>día entero</span><span>dom 20</span></div>
+    <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:8px;padding:10px 0;border-bottom:1px solid rgba(236,231,220,.15)"><span>Villa La Angostura a Traful, ida y vuelta</span><span>120 km<br>1 h 15 cada tramo</span><span>lun 21</span></div>
+    <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:8px;padding:10px 0;border-bottom:1px solid rgba(236,231,220,.15)"><span>Villa La Angostura a San Martín</span><span>110 km<br>día entero</span><span>mar 22</span></div>
+    <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:8px;padding:10px 0;border-bottom:1px solid rgba(236,231,220,.15)"><span>San Martín al aeropuerto</span><span>190 km<br>3 h</span><span>sáb 26, 08:30</span></div>
+  </div>
+</section>
+</sc-if>
+
+<footer style="max-width:720px;margin:0 auto;padding:0 24px 56px;font-size:13px;color:#b9b2a4">Itinerario armado en septiembre. Chequear el estado de la Ruta 65 y los horarios de los catamaranes cerca de la fecha.</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mostrarTabla&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contenido&quot;}}">
+class Component extends DCLogic {
+  go(id) {
+    return () => { const el = document.getElementById(id); if (!el) return;
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' }); };
+  }
+  renderVals() {
+    return { mostrarTabla: this.props.mostrarTabla ?? true, goB1: this.go('base1'), goB2: this.go('base2'), goB3: this.go('base3') };
+  }
+}
+</script>
+</body>
+</html>
